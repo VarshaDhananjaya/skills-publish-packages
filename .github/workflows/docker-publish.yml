@@ -43,8 +43,6 @@ jobs:
         with:
           context: .
           push: true
-          
           platforms: linux/amd64,linux/arm64
-          tags: |
-            ghcr.io/varshadhananjaya/skills-publish-packages/stackoverflown:main
-            ghcr.io/varshadhananjaya/skills-publish-packages/stackoverflown:${{ github.sha }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
